@@ -1,0 +1,23 @@
+version: "2"
+
+services:
+  d-driver-management:
+    image: gcr.io/drvmngmt-2020/d-driver-management:latest
+    build:
+      context: .
+      dockerfile: dockerfiles/app.docker.dev
+    env_file: .env
+    container_name: "d-driver-management"
+    working_dir: /usr/src/app
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - "3010:3000"
+    networks:
+      - default
+      - bridge-network
+networks:
+  default:
+    driver: bridge
+  bridge-network:
+    external: true

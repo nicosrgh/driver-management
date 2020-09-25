@@ -1,0 +1,32 @@
+{
+  "env": {
+    "development": {
+      "plugins": ["inline-dotenv"]
+    },
+    "production": {
+      "plugins": ["transform-inline-environment-variables"]
+    }
+  },
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "alias": {
+          "config": "./config",
+          "components": "./components",
+          "constructors": "./constructors",
+          "ducks": "./redux/ducks",
+          "hoc": "./hoc",
+          "lib": "./lib",
+          "node_modules": "./node_modules",
+          "observables": "./redux/observables",
+          "pages": "./pages",
+          "static": "./static"
+        }
+      }
+    ],
+  ],
+  "presets": [
+    "next/babel",
+  ]
+}

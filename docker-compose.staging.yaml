@@ -1,0 +1,13 @@
+version: "2"
+
+services:
+  s-driver-management:
+    image: gcr.io/drvmngmt-2020/s-driver-management:latest
+    build:
+      context: .
+      dockerfile: dockerfiles/app.docker
+    env_file: .env
+    container_name: "s-driver-management"
+    working_dir: /usr/src/app
+    ports:
+      - "3000:3000"

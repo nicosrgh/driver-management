@@ -1,0 +1,13 @@
+version: "2"
+
+services:
+  p-driver-management:
+    image: gcr.io/drvmngmt-2020/p-driver-management:latest
+    build:
+      context: .
+      dockerfile: dockerfiles/app.docker
+    env_file: .env
+    container_name: "p-driver-management"
+    working_dir: /usr/src/app
+    ports:
+      - "3000:3000"
